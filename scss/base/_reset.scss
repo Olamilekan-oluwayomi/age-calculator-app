@@ -1,0 +1,53 @@
+// =============================================================
+// 🧹 Global CSS Reset
+// =============================================================
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  background-color: var(--color-grey-100);
+  font-family: var(--font-main);
+
+  // Center the card layout on the screen
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.25rem;
+}
+
+input,
+button {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+// Remove default spin buttons from number inputs (Chrome, Safari, Edge, Opera)
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+// Remove default spin buttons for Firefox
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.attribution {
+  margin-top: auto;
+}

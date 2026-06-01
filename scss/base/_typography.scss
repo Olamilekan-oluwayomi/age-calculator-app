@@ -1,0 +1,23 @@
+//==============================================================
+// 🔤 Global Typography Definitions
+//==============================================================
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.1;
+}
+
+// Target the input text values specifically
+input[type="number"] {
+  font-size: 2rem; // 32px based on style guide target
+  font-weight: var(--weight-bold);
+  color: var(--color-black);
+}
+
+.italic-display {
+  font-style: italic;
+}

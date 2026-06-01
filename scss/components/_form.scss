@@ -1,0 +1,92 @@
+//==============================================================
+// 📝 Form Fields and Inputs Layout
+// ============================================================
+
+.age-form {
+  width: 100%;
+}
+
+// 1. Input Group Wrapper (The grid container for Day, Month, Year blocks)
+.input-group {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 1rem; 
+  max-width: 18.75rem; // ~300px on mobile to match design bounds
+
+  @media screen and (min-width: 48em) {
+    // 768px Breakpoint
+    gap: 2rem; // Wider spacing on desktop
+    max-width: 40rem; // Expands to fit large desktop typography
+  }
+}
+
+// 2. Individual Input Controls
+.input-control {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; 
+
+  // 🏷️ Label Component
+  label {
+    font-size: 0.75rem; 
+    font-weight: var(--weight-bold);
+    color: var(--color-grey-500);
+    text-transform: uppercase;
+    letter-spacing: 0.2em; 
+    transition: color 0.2s ease-in-out;
+  }
+
+  // ⌨️ Input Box Component
+  input[type="number"] {
+    width: 100%;
+    padding: 0.375em 0.5em; 
+    border: 1px solid var(--color-grey-200);
+    border-radius: 0.5rem; 
+    font-size: 1.25rem; 
+    font-weight: var(--weight-bold);
+    color: var(--color-black);
+    caret-color: var(--color-purple-500); // Purple blinking text cursor
+    transition: border-color 0.2s ease-in-out;
+
+    &:focus {
+      outline: none;
+      border-color: var(--color-purple-500); 
+    }
+
+    // Design layout match for desktop dimensions
+    @media screen and (min-width: 48em) {
+      font-size: 2rem; // 32px based on style guide targets
+      padding: 0.375em 0.75em;
+    }
+  }
+
+  // 🚨 Dynamic Validation Error Message Text
+  .error-message {
+    display: none; 
+    font-size: 0.625rem; 
+    font-style: italic;
+    font-weight: var(--weight-regular-italic);
+    color: var(--color-red-400); 
+    line-height: 1.2;
+
+    @media screen and (min-width: 48em) {
+      font-size: 0.875rem; 
+    }
+  }
+
+  // 💥 Active Error State Modifiers
+  // When validation fails, JS will append this modifier class to the container
+  &.is-error {
+    label {
+      color: var(--color-red-400); // Labels turn red
+    }
+
+    input[type="number"] {
+      border-color: var(--color-red-400); 
+    }
+
+    .error-message {
+      display: block; // Unhides the descriptive error text block
+    }
+  }
+}

@@ -1,0 +1,29 @@
+// ==========================================================================
+// 🎨 Global CSS Custom Properties (Native Variables)
+// ==========================================================================
+
+:root {
+  // --- Primary Colors ---
+  --color-purple-500: hsl(259, 100%, 65%);
+  --color-red-400: hsl(0, 100%, 67%);
+
+  // --- Neutral Colors ---
+  --color-white: hsl(0, 100%, 100%);
+  --color-grey-100: hsl(0, 0%, 94%);
+  --color-grey-200: hsl(0, 0%, 86%);
+  --color-grey-500: hsl(0, 1%, 44%);
+  --color-black: hsl(0, 0%, 0%);
+
+  // --- Typography ---
+  --font-main: "Poppins", sans-serif;
+
+  // Font Weights
+  --weight-regular-italic: 400; // Note: Poppins 400i requires font-style: italic
+  --weight-bold: 700;
+  --weight-extra-bold: 800; // Note: Poppins 800i requires font-style: italic
+}
+
+// --- SCSS Breakpoint Variables ---
+// (SCSS needs these as standard variables to use them inside @media queries)
+$breakpoint-mobile: 375px;
+$breakpoint-desktop: 1440px;

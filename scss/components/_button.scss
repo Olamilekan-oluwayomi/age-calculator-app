@@ -1,0 +1,79 @@
+//============================================================
+// 🔘 Action Button and Horizontal Divider Layout
+//============================================================
+
+.action-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  margin: 2rem 0;
+
+  @media screen and (min-width: 48em) {
+    // 768px Desktop View
+    justify-content: flex-end; // Push the button container wrapper to the right
+    margin: 3rem 0; // Increase spacing on desktop layouts
+  }
+}
+
+// 📏 The Thematic Break Line
+.divider-line {
+  width: 100%;
+  border: 0;
+  border-top: 1px solid var(--color-grey-200);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+// 🟪 The Purple Interactive Circular Action Button
+.submit-btn {
+  position: relative;
+  z-index: 2;
+
+  // Dimensions
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-color: var(--color-purple-500);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.2s ease;
+
+  // Render the inner graphical vector asset smoothly
+  svg {
+    width: 1.5rem; // Scale down the raw vector code to fit cleanly inside mobile circle bounds
+    height: auto;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  // Interaction feedback states
+  &:hover,
+  &:focus-visible {
+    outline: none;
+    background-color: var(--color-black);
+    cursor: pointer;
+    transform: scale(1.1) rotate(0deg);
+  }
+
+  &:active {
+    transform: scale(0.95); // Interactive click shrink feedback
+  }
+
+  // Desktop Responsive Scaling adjustments
+  @media screen and (min-width: 48em) {
+    width: 6rem; // 96px scaled desktop layout dimensions
+    height: 6rem;
+
+    svg {
+      width: 2.75rem; // Expand vector scaling dimensions to balance desktop proportions
+    }
+  }
+}

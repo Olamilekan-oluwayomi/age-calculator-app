@@ -1,0 +1,22 @@
+//==============================================================
+// 📦 Main Calculator Card Container
+//==============================================================
+
+.calculator-container {
+  // 📱 Mobile Styles (Default)
+  // No max-width here! Let it fill the screen on small phones.
+  width: 100%;
+  background-color: var(--color-white);
+  padding: 3rem 1.5rem;
+  border-radius: 1.5rem;
+  border-bottom-right-radius: 6rem; // The signature design curve seen in preview.jpg
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+
+  // 💻 Desktop Styles (Triggered when screen hits our breakpoint)
+  @media screen and (min-width: 48em) {
+    // This is where you lock down the size so it doesn't stretch infinitely on monitors
+    width: 840px;
+    padding: 3.5rem;
+    border-bottom-right-radius: 12rem;
+  }
+}
